@@ -29,6 +29,7 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:restaurant_finder/UI/main_screen.dart';
 import 'utils/Environment.dart';
 
 void main() {
@@ -44,7 +45,7 @@ class RestaurantFinder extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: Container(),
+      home: MainScreen(),
     );
   }
 }
