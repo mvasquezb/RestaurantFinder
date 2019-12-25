@@ -33,12 +33,13 @@ import 'dart:convert' show json;
 
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
+import '../utils/Environment.dart';
 
 import 'location.dart';
 import 'restaurant.dart';
 
 class ZomatoClient {
-  final _apiKey = 'PASTE YOUR API KEY HERE';
+  final _apiKey = Environment.zomatoKey;
   final _host = 'developers.zomato.com';
   final _contextRoot = 'api/v2.1';
 

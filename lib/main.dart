@@ -29,8 +29,12 @@
  */
 
 import 'package:flutter/material.dart';
+import 'utils/Environment.dart';
 
-void main() => runApp(RestaurantFinder());
+void main() {
+  Environment.init();
+  runApp(RestaurantFinder());
+}
 
 class RestaurantFinder extends StatelessWidget {
   @override
