@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:restaurant_finder/BLoC/RestaurantBloc.dart';
 import 'package:restaurant_finder/BLoC/bloc_provider.dart';
 import 'package:restaurant_finder/DataLayer/location.dart';
+import 'package:restaurant_finder/UI/favourite_screen.dart';
 import 'package:restaurant_finder/UI/restaurant_tile.dart';
 
 import '../DataLayer/restaurant.dart';
 import 'image_container.dart';
-
 
 class RestaurantScreen extends StatelessWidget {
   final Location location;
@@ -19,6 +19,13 @@ class RestaurantScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(location.title),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.favorite_border),
+            onPressed: () => Navigator.of(context)
+                .push(MaterialPageRoute(builder: (_) => FavouriteScreen())),
+          )
+        ],
       ),
       body: _buildSearch(context),
     );
@@ -54,11 +61,15 @@ class RestaurantScreen extends StatelessWidget {
         final results = snapshot.data;
 
         if (results == null) {
-          return Center(child: Text('Enter a restaurant name or cuisine type'),);
+          return Center(
+            child: Text('Enter a restaurant name or cuisine type'),
+          );
         }
 
         if (results.isEmpty) {
-          return Center(child: Text('No Results'),);
+          return Center(
+            child: Text('No Results'),
+          );
         }
 
         return _buildSearchResults(results);
