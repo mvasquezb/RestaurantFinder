@@ -17,11 +17,11 @@ class FavouriteScreen extends StatelessWidget {
       ),
       body: StreamBuilder(
         stream: bloc.favouritesStream,
-        initialData: bloc.favourites,
+        initialData: bloc.favourites.toList(),
         builder: (context, snapshot) {
           List<Restaurant> favourites = 
             (snapshot.connectionState == ConnectionState.waiting)
-              ? bloc.favourites
+              ? bloc.favourites.toList()
               : snapshot.data;
 
           if (favourites == null || favourites.isEmpty) {

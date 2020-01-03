@@ -7,7 +7,6 @@ import 'package:restaurant_finder/UI/favourite_screen.dart';
 import 'package:restaurant_finder/UI/restaurant_tile.dart';
 
 import '../DataLayer/restaurant.dart';
-import 'image_container.dart';
 
 class RestaurantScreen extends StatelessWidget {
   final Location location;
