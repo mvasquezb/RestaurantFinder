@@ -1,9 +1,9 @@
-import 'package:dotenv/dotenv.dart' show load, env;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Environment {
-  static init() => load();
+  static Future init() => DotEnv().load();
 
   static String get zomatoKey {
-    return env['ZOMATO_API_KEY'];
+    return DotEnv().env['ZOMATO_API_KEY'];
   }
 }
